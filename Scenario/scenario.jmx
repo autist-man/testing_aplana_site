@@ -1344,7 +1344,7 @@ if(&quot;${__V(SEND_COMMENT_${SEND_COMMENT_matchNr}_g0)}&quot; != &quot;&lt;b&gt
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">C:\User\GitHub\testing_aplana_site\Result\logs.csv</stringProp>
+        <stringProp name="filename">C:\User\GitHub\testing_aplana_site\Result\Logs\logs.csv</stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="Error" enabled="true">
@@ -1384,7 +1384,7 @@ if(&quot;${__V(SEND_COMMENT_${SEND_COMMENT_matchNr}_g0)}&quot; != &quot;&lt;b&gt
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">C:\User\GitHub\testing_aplana_site\Result\logs_errors.csv</stringProp>
+        <stringProp name="filename">C:\User\GitHub\testing_aplana_site\Result\Logs\logs_errors.csv</stringProp>
       </ResultCollector>
       <hashTree/>
       <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="jp@gc - PerfMon Metrics Collector" enabled="true">
@@ -1424,7 +1424,7 @@ if(&quot;${__V(SEND_COMMENT_${SEND_COMMENT_matchNr}_g0)}&quot; != &quot;&lt;b&gt
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">C:\User\GitHub\testing_aplana_site\Result\logs_PerfMon.csv</stringProp>
+        <stringProp name="filename">C:\User\GitHub\testing_aplana_site\Result\Logs\logs_PerfMon.csv</stringProp>
         <longProp name="interval_grouping">1000</longProp>
         <boolProp name="graph_aggregated">false</boolProp>
         <stringProp name="include_sample_labels"></stringProp>
@@ -1479,6 +1479,64 @@ if(&quot;${__V(SEND_COMMENT_${SEND_COMMENT_matchNr}_g0)}&quot; != &quot;&lt;b&gt
         </collectionProp>
       </kg.apc.jmeter.perfmon.PerfMonCollector>
       <hashTree/>
+      <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener Influx" enabled="true">
+        <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="testName" elementType="Argument">
+              <stringProp name="Argument.name">testName</stringProp>
+              <stringProp name="Argument.value">Test Aplana Site</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="nodeName" elementType="Argument">
+              <stringProp name="Argument.name">nodeName</stringProp>
+              <stringProp name="Argument.value">Test_1</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="influxDBHost" elementType="Argument">
+              <stringProp name="Argument.name">influxDBHost</stringProp>
+              <stringProp name="Argument.value">localhost</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="influxDBPort" elementType="Argument">
+              <stringProp name="Argument.name">influxDBPort</stringProp>
+              <stringProp name="Argument.value">8086</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="influxDBUser" elementType="Argument">
+              <stringProp name="Argument.name">influxDBUser</stringProp>
+              <stringProp name="Argument.value">jmeter</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="influxDBPassword" elementType="Argument">
+              <stringProp name="Argument.name">influxDBPassword</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="influxDBDatabase" elementType="Argument">
+              <stringProp name="Argument.name">influxDBDatabase</stringProp>
+              <stringProp name="Argument.value">jmeter</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="retentionPolicy" elementType="Argument">
+              <stringProp name="Argument.name">retentionPolicy</stringProp>
+              <stringProp name="Argument.value">autogen</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="samplersList" elementType="Argument">
+              <stringProp name="Argument.name">samplersList</stringProp>
+              <stringProp name="Argument.value">.*</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="useRegexForSamplerList" elementType="Argument">
+              <stringProp name="Argument.name">useRegexForSamplerList</stringProp>
+              <stringProp name="Argument.value">true</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </elementProp>
+        <stringProp name="classname">rocks.nt.apm.jmeter.JMeterInfluxDBBackendListenerClient</stringProp>
+      </BackendListener>
+      <hashTree/>
       <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.TransactionsPerSecondGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Transactions per Second" enabled="false">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
@@ -1513,7 +1571,7 @@ if(&quot;${__V(SEND_COMMENT_${SEND_COMMENT_matchNr}_g0)}&quot; != &quot;&lt;b&gt
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">C:\User\GitHub\testing_aplana_site\Result\logs.csv</stringProp>
+        <stringProp name="filename">C:\User\GitHub\testing_aplana_site\Result\Logs\logs.csv</stringProp>
         <longProp name="interval_grouping">1000</longProp>
         <boolProp name="graph_aggregated">false</boolProp>
         <stringProp name="include_sample_labels"></stringProp>
